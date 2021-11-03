@@ -1,16 +1,33 @@
 .list {
 margin-bottom: 30px;
 
+&__add-button {
+  opacity: 0.4;
+  &:hover {
+    opacity: 1;
+  }
+}
+
  li {
    display: flex;
    align-items: center;
    margin-bottom: 5px;
    padding: 10px 12px;
+
+   cursor: pointer;
+
+   &.padge {
+     position: relative;
+     margin-left: 5px;
+   }
+
+    &.active {
    border-radius: 4px;
    box-shadow: 1px 2px 10px rgb(238, 230, 230);
    background-color: #fff;
-   cursor: pointer;
  }
+
+
  i {
    display: inline-flex;
    margin-right: 8px;
@@ -20,19 +37,7 @@ margin-bottom: 30px;
        }
      }
  }
+}
 
- .group {
-   width: 10px;
-   height: 10px;
-   border-radius: 30px;
-     &--green {
-       background-color: green;
-     }
-     &--blue {
-       background-color: blue;
-     }
-     &--pink {
-       background-color: pink;
-     }
- }
+
 }

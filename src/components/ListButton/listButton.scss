@@ -1,0 +1,35 @@
+.list_add {
+
+  &__popup {
+    width: 220px;
+    height: 170px;
+    background-color: white;
+    box-shadow: 1px 5px 20px rgb(226, 215, 215);
+    border-radius: 10px;
+     padding: 18px;
+
+    .field {
+      width: 100%;
+
+    }
+    &-colors {
+      margin-top: 15px;
+      display:flex;
+      justify-content: space-between;
+    }
+    .button {
+      width: 100%;
+      margin-top: 15px;
+    }
+    .badge {
+      width: 20px;
+      height: 20px;
+      border: 2px solid transparent;
+      cursor: pointer;
+
+      &.active {
+        border: 2px solid rgb(124, 44, 44)
+      }
+    }
+  }
+}

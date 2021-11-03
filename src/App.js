@@ -1,6 +1,8 @@
 import React from 'react'
 
-import List from './components/list'
+import List from './components/List/list'
+import ListButton from "./components/ListButton";
+import DB from './assets/db.json'
 
 function App() {
   return (
@@ -21,26 +23,29 @@ function App() {
                 </svg>
               ),
 
-          name: "Все задачи" }
+              name: "Все задачи",
+              active: true,
+            },
           ]}
         />
         <List
           items={[
             {
-              color: 'green',
-              name: "Покупки"
+              color: "green",
+              name: "Покупки",
             },
             {
-              color: 'blue',
-              name: "Фронтент"
+              color: "blue",
+              name: "Фронтент",
             },
             {
-              color: 'pink',
-              name: "Фильмы и сериалы"
-            }
+              color: "pink",
+              name: "Фильмы и сериалы",
+            },
+
           ]}
         />
-
+        <ListButton colors={DB.colors} />
       </div>
       <div className="todo__task"></div>
     </div>

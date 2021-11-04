@@ -13,8 +13,11 @@ margin-bottom: 30px;
    align-items: center;
    margin-bottom: 5px;
    padding: 10px 12px;
-
    cursor: pointer;
+
+   &:hover {
+     background: rgba(255, 255, 255, 0.4)
+   }
 
    &.padge {
      position: relative;

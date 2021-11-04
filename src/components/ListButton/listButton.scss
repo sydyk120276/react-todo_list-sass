@@ -7,10 +7,22 @@
     box-shadow: 1px 5px 20px rgb(226, 215, 215);
     border-radius: 10px;
      padding: 18px;
+     position: relative;
 
     .field {
       width: 100%;
 
+    }
+    &-close-btn {
+      height: 17px;
+      position: absolute;
+      top: -5px;
+      right: -5px;
+      cursor: pointer;
+      &:hover {
+        height: 20px;
+        font-weight: bold;
+      }
     }
     &-colors {
       margin-top: 15px;

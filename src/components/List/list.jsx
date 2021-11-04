@@ -4,7 +4,7 @@ import classNames from "classnames";
 import './list.scss'
 import Badge from "../Badge";
 
-const List = ({ items, isRemovable, onClick, className }) => {
+const List = ({ items, isRemovable, onClick}) => {
   return (
     <ul onClick={onClick} className="list">
       {items.map((item, index) => (

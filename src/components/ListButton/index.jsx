@@ -3,6 +3,7 @@ import React, { useState }  from "react";
 import List from '../List/list'
 import './listButton.scss'
 import Badge from "../Badge";
+import closeSvg from "../../assets/img/icons8-удалить.svg";
 
 
 const ListButton = ({ colors }) => {
@@ -38,15 +39,21 @@ const ListButton = ({ colors }) => {
       />
       {visiblePopup && (
         <div className="list_add__popup">
+          <img
+            onClick={() => setVisiblePopup(false)}
+            src={closeSvg}
+            alt=""
+            className="list_add__popup-close-btn"
+          />
           <input className="field" type="text" placeholder="Название списка" />
           <div className="list_add__popup-colors">
             {colors.map((color) => (
               <Badge
-              onClick={() => setSelectColor(color.id)}
-               key={color.id}
-               color={color.name}
-               className={selectColor === color.id && 'active'}
-               />
+                onClick={() => setSelectColor(color.id)}
+                key={color.id}
+                color={color.name}
+                className={selectColor === color.id && "active"}
+              />
             ))}
           </div>
           <button className="button">Добавить</button>

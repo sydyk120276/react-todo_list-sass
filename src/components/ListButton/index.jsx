@@ -12,14 +12,22 @@ const ListButton = ({ colors, onAdd }) => {
   const [selectColor, setSelectColor] = useState(colors[0].id)
   const [inputValue, setInputValue] = useState('')
 
+
+  const onClose = () => {
+    setVisiblePopup(false);
+    setInputValue("");
+    setSelectColor(colors[0].id);
+  }
+
   const addList = () => {
     if (!inputValue) {
       alert('Введите строку')
       return
     }
     const namecolor = colors.filter(color => color.id === selectColor)[0].name
+
     onAdd({ id: Math.random(), name: inputValue, color: namecolor });
-    setVisiblePopup(false)
+    onClose()
   }
 
   return (
@@ -46,17 +54,17 @@ const ListButton = ({ colors, onAdd }) => {
             name: "Добавить папку",
           },
         ]}
-        isRemovable
+
       />
       {visiblePopup && (
         <div className="list_add__popup">
           <img
-            onClick={() => setVisiblePopup(false)}
+            onClick={onClose}
             src={closeSvg}
             alt=""
             className="list_add__popup-close-btn"
           />
-          <input onChange={(e) => setInputValue(e.target.value)} value={inputValue} className="field" type="text" placeholder="Название списка" />
+          <input onChange={(e) => setInputValue(e.target.value)} className="field" type="text" placeholder="Название списка" />
           <div className="list_add__popup-colors">
             {colors.map((color) => (
               <Badge

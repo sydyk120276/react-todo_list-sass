@@ -5,16 +5,18 @@ import ListButton from "./components/ListButton";
 import DB from './assets/db.json'
 
 function App() {
-  const [lists, setLists] = useState(
+  const [listss, setLists] = useState(
     DB.lists.map((item) => {
             item.color = DB.colors.filter(color => color.id === item.colorId)[0].name
             return item
           })
   )
 
+
+
   const addList = (obj) => {
     const newList = [
-      ...lists,
+      ...listss,
       obj
     ]
     setLists(newList)
@@ -38,12 +40,13 @@ function App() {
                 </svg>
               ),
 
-              name: "Все задачи",
-              active: true,
+              name: "Все задачи"
             },
           ]}
         />
-        <List items={lists} />
+        <List items={listss} onRemove={(asd) => {
+          console.log(asd)
+        }} isRemovable />
         <ListButton onAdd={addList} colors={DB.colors} />
       </div>
       <div className="todo__task"></div>

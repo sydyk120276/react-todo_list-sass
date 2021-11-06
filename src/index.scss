@@ -13,10 +13,11 @@
 
 .todo {
   position: absolute;
+  display: flex;
   top:50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 700px;
+  width: 750px;
   height: 550px;
   box-shadow: 1px 5px 20px rgb(226, 215, 215);
   border-radius: 10px;
@@ -29,7 +30,9 @@
       background-color: rgb(223, 236, 240);
        padding: 60px 20px;
     }
-
+   &__task {
+     flex: 1;
+   }
 
 }
 

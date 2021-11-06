@@ -3,16 +3,15 @@ import classNames from "classnames";
 
 import './list.scss'
 import Badge from "../Badge";
-import removeSvg from '../../assets/img/icons8-удалить.svg'
+import removeSvg from '../../assets/img/delete.svg'
 
-const List = ({ items, isRemovable, onClick, onRemove}) => {
+const List = ({ items, isRemovable, onClick, onRemove }) => {
 
     const onRemoveList = (item) => {
      if (window.confirm("вы дествительно хотите удалить?")) {
     onRemove(item);
      }
-
-    };
+    }
 
   return (
     <ul onClick={onClick} className="list">
@@ -28,7 +27,7 @@ const List = ({ items, isRemovable, onClick, onRemove}) => {
               src={removeSvg}
               alt=""
               className="list__remove-icon"
-              onClick={onRemoveList}
+              onClick={() => onRemoveList(item)}
             />
           )}
         </li>

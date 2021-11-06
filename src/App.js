@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 
 import List from './components/List/list'
+import Tasks from './components/Task'
 import ListButton from "./components/ListButton";
 import DB from './assets/db.json'
 
@@ -41,7 +42,7 @@ function App() {
               ),
 
               name: "Все задачи"
-            },
+            }
           ]}
         />
         <List items={listss} onRemove={(asd) => {
@@ -49,7 +50,9 @@ function App() {
         }} isRemovable />
         <ListButton onAdd={addList} colors={DB.colors} />
       </div>
-      <div className="todo__task"></div>
+      <div className="todo__task">
+        <Tasks />
+      </div>
     </div>
   );
 }

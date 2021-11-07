@@ -57,7 +57,7 @@ useEffect(() => {
         <ListButton onAdd={addList} colors={colors} />
       </div>
       <div className="todo__task">
-        <Task />
+        {lists && <Task list={lists[1]}/>}
       </div>
     </div>
   );

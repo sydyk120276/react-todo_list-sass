@@ -1,5 +1,5 @@
 .task {
-   
+
     padding: 60px;
   &__title {
    font-size: 32px;
@@ -30,6 +30,7 @@
     &_row {
         display: flex;
         align-items: center;
+        margin-bottom: 15px;
 
         input {
             margin-left: 15px;
@@ -71,7 +72,7 @@
             transition: opacity 0.3s ease-in-out;
         }
 
-        
+
     }
     input:checked + label {
         background-color:rgb(8, 197, 197);

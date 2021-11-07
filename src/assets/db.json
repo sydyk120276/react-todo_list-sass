@@ -35,22 +35,26 @@
     {
       "id": 1,
       "listId": 2,
-      "text": "Изучить JavaScript"
+      "text": "Изучить JavaScript",
+      "completed": false
     },
     {
       "id": 2,
       "listId": 2,
-      "text": "Изучить паттерны проектирования"
+      "text": "Изучить паттерны проектирования",
+      "completed": false
     },
     {
       "id": 3,
       "listId": 2,
-      "text": "ReactJS Hooks (useState, useReducer, useEffect и т.д.)"
+      "text": "ReactJS Hooks (useState, useReducer, useEffect и т.д.)",
+      "completed": true
     },
     {
       "id": 4,
       "listId": 2,
-      "text": "Redyx (redux-observable, redux-saga)"
+      "text": "Redyx (redux-observable, redux-saga)",
+      "completed": false
     },
     {
       "name": "test",

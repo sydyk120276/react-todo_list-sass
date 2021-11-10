@@ -28,7 +28,7 @@ const editTitle = () => {
         </h2>
 
         <div className="task__items">
-          {!list.tasks.length && <h2>Задачи отсутсвуют</h2>}
+          {list.tasks && !list.tasks.length && <h2>Задачи отсутсвуют</h2>}
           {list.tasks.map((item) => (
             <div key={item.id} className="task__items_row">
               <div className="checkbox">

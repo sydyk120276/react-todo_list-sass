@@ -7,7 +7,7 @@ import Badge from "../Badge";
 import removeSvg from '../../assets/img/delete.svg'
 
 const List = ({ items, isRemovable, onClick, onRemove, onClickItem, activItem }) => {
-console.log(items)
+
     const onRemoveList = (item) => {
      if (window.confirm("вы дествительно хотите удалить?")) {
        axios.delete(`http://localhost:3001/lists/${item.id}`).then(() => {
@@ -21,7 +21,7 @@ console.log(items)
       {items.map((item, index) => (
         <li
           key={index}
-          className={classNames(item.className, { active: item.active 
+          className={classNames(item.className, { active: item.active
             ? item.active
             : activItem && activItem.id === item.id})}
           onClick={onClickItem ? () => onClickItem(item) : null}

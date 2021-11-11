@@ -29,6 +29,11 @@
       "name": "Спорт",
       "colorId": 7,
       "id": 6
+    },
+    {
+      "name": "Продажа",
+      "colorId": 8,
+      "id": 7
     }
   ],
   "tasks": [
@@ -77,6 +82,18 @@
       "text": "dfdsfdsfds",
       "completed": false,
       "id": 8
+    },
+    {
+      "listId": 1,
+      "text": "dfdsfsdd",
+      "completed": false,
+      "id": 9
+    },
+    {
+      "listId": 6,
+      "text": "dfadfafads",
+      "completed": false,
+      "id": 10
     }
   ],
   "colors": [

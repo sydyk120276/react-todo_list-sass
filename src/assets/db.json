@@ -31,8 +31,8 @@
       "id": 6
     },
     {
-      "name": "Продажа",
-      "colorId": 8,
+      "name": "ererer",
+      "colorId": 6,
       "id": 7
     }
   ],
@@ -41,25 +41,25 @@
       "id": 1,
       "listId": 2,
       "text": "Изучить JavaScript",
-      "completed": false
+      "completed": true
     },
     {
       "id": 2,
       "listId": 2,
       "text": "Изучить паттерны проектирования",
-      "completed": false
+      "completed": true
     },
     {
       "id": 3,
       "listId": 2,
       "text": "ReactJS Hooks (useState, useReducer, useEffect и т.д.)",
-      "completed": true
+      "completed": false
     },
     {
       "id": 4,
       "listId": 2,
       "text": "Redyx (redux-observable, redux-saga)",
-      "completed": false
+      "completed": true
     },
     {
       "name": "test",
@@ -73,15 +73,9 @@
     },
     {
       "listId": 4,
-      "text": "Прочитать книгу",
-      "completed": false,
+      "text": "Прочитать книгу 123",
+      "completed": true,
       "id": 7
-    },
-    {
-      "listId": 4,
-      "text": "dfdsfdsfds",
-      "completed": false,
-      "id": 8
     },
     {
       "listId": 1,
@@ -94,6 +88,12 @@
       "text": "dfadfafads",
       "completed": false,
       "id": 10
+    },
+    {
+      "listId": 5,
+      "text": "dsadsad43432",
+      "completed": false,
+      "id": 13
     }
   ],
   "colors": [

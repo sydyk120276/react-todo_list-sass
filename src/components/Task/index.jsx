@@ -8,7 +8,15 @@ import Task from './tasks'
 
 
 
-const Tasks = ({ list, onEditTitle, onAddTask, besSagolovki }) => {
+const Tasks = ({
+  list,
+  onEditTitle,
+  onAddTask,
+  onRemoveTask,
+  besSagolovki,
+  onCompleteTask,
+  onEditTask,
+}) => {
   const editTitle = () => {
     const newTitle = window.prompt("Название списка", list.name);
     if (newTitle) {
@@ -32,10 +40,18 @@ const Tasks = ({ list, onEditTitle, onAddTask, besSagolovki }) => {
         {!besSagolovki && list.tasks && !list.tasks.length && (
           <h2>Задачи отсутсвуют</h2>
         )}
-        {list.tasks && list.tasks.map((task) => (
-         <Task {...task} />
-        ))}
-        <AddTaskForm list={list} onAddTask={onAddTask} />
+        {list.tasks &&
+          list.tasks.map((task) => (
+            <Task
+              {...task}
+              key={task.id}
+              onRemove={onRemoveTask}
+              list={list}
+              onEdit={onEditTask}
+              onComplete={onCompleteTask}
+            />
+          ))}
+        <AddTaskForm key={list.id} list={list} onAddTask={onAddTask} />
       </div>
     </div>
   );

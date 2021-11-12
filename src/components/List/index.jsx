@@ -6,7 +6,7 @@ import './list.scss'
 import Badge from "../Badge";
 import removeSvg from '../../assets/img/delete.svg'
 
-const List = ({ items, isRemovable, onClick, onRemove, onClickItem, activItem }) => {
+const List = ({ items, isRemovable, onClick, onRemove, onClickItem, activeItem }) => {
 
     const onRemoveList = (item) => {
      if (window.confirm("вы дествительно хотите удалить?")) {
@@ -23,7 +23,7 @@ const List = ({ items, isRemovable, onClick, onRemove, onClickItem, activItem })
           key={index}
           className={classNames(item.className, { active: item.active
             ? item.active
-            : activItem && activItem.id === item.id})}
+            : activeItem && activeItem.id === item.id})}
           onClick={onClickItem ? () => onClickItem(item) : null}
         >
           <i>{item.icons ? item.icons : <Badge color={item.color.name} />}</i>

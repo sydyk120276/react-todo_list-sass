@@ -54,6 +54,72 @@ const onAddTask = (listId, taskObj) => {
   setLists(newList)
 }
 
+    const onRemoveTask = (listId, taskId ) => {
+      if (window.confirm("вы дествительно хотите удалить?")) {
+          const newList = lists.map((item) => {
+            if (item.id === listId) {
+              item.tasks = item.tasks.filter(task => task.id !== taskId)
+            }
+            return item;
+          });
+            setLists(newList);
+        axios.delete(`http://localhost:3001/tasks/${taskId}`).catch(() => {
+          alert("Не удалось удалить задачу")
+        });
+      }
+    };
+
+    const onEditTask = (listId, taskObj) => {
+      const newTaskText = (window.prompt("Текст задачи", taskObj.text))
+
+      if (!newTaskText) {
+        return
+      }
+
+        const newList = lists.map((item) => {
+          if (item.id === listId) {
+            item.tasks = item.tasks.map((task) => {
+              if (task.id === taskObj.id) {
+             task.id = newTaskText
+              }
+              return task
+            });
+          }
+          return item;
+        });
+        setLists(newList);
+        axios
+          .patch(`http://localhost:3001/tasks/${taskObj.id}`, {
+            text: newTaskText
+          })
+          .catch(() => {
+            alert("Не удалось дополнить задачу");
+          });
+      }
+
+
+        const onCompleteTask = (listId, taskId, completed) => {
+          const newList = lists.map((list) => {
+            if (list.id === listId) {
+              list.tasks = list.tasks.map((task) => {
+                if (task.id === taskId) {
+                  task.completed = completed;
+                }
+                return task;
+              });
+            }
+            return list;
+          });
+          setLists(newList);
+          axios
+            .patch("http://localhost:3001/tasks/" + taskId, {
+              completed,
+            })
+            .catch(() => {
+              alert("Не удалось обновить задачу");
+            });
+        };
+
 
   useEffect(() => {
     const listId = history.location.pathname.split("lists/")[1];
@@ -62,6 +128,8 @@ const onAddTask = (listId, taskObj) => {
       setActiveItem(list);
     }
   }, [lists, history.location.pathname]);
+
+
 
   return (
     <div className="todo">
@@ -72,7 +140,7 @@ const onAddTask = (listId, taskObj) => {
           }}
           items={[
             {
-              active: history.location.pathname === "/",
+              active: !activeItem,
               icons: (
                 <svg
                   fill="#000000"
@@ -96,11 +164,11 @@ const onAddTask = (listId, taskObj) => {
               const newLists = lists.filter((item) => item.id !== id);
               setLists(newLists);
             }}
-            onClickItem={list => {
+            onClickItem={(list) => {
               history.push(`/lists/${list.id}`);
-              setActiveItem(list)
+              setActiveItem(list);
             }}
-            activItem={activeItem}
+            activeItem={activeItem}
             isRemovable
           />
         ) : (
@@ -119,6 +187,9 @@ const onAddTask = (listId, taskObj) => {
                 list={list}
                 onEditTitle={editTitle}
                 onAddTask={onAddTask}
+                onRemoveTask={onRemoveTask}
+                onEditTask={onEditTask}
+                onCompleteTask={onCompleteTask}
                 besSagolovki
               />
             ))}
@@ -129,6 +200,9 @@ const onAddTask = (listId, taskObj) => {
               list={activeItem}
               onEditTitle={editTitle}
               onAddTask={onAddTask}
+              onRemoveTask={onRemoveTask}
+              onEditTask={onEditTask}
+              onCompleteTask={onCompleteTask}
             />
           )}
         </Route>

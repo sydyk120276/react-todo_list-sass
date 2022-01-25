@@ -211,4 +211,4 @@ const onAddTask = (listId, taskObj) => {
   );
 }
 
-export default App;
+export default React.memo(App);

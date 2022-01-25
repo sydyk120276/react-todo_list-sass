@@ -38,7 +38,7 @@ const AddTaskForm = ({ list, onAddTask }) => {
 
     return (
         <div className="task__form">
-            {!visibleForm 
+            {!visibleForm
             ? <div className="task__form-new" onClick={toggleFormVisible} >
                 <svg
                     fill="#000000"
@@ -53,7 +53,7 @@ const AddTaskForm = ({ list, onAddTask }) => {
                     />
                 </svg>
                 <span>Добавить задачи</span>
-            </div> 
+            </div>
             : <div className="task__form-block" >
                 <input
                     onChange={(e) => setInputValue(e.target.value)}
@@ -73,4 +73,4 @@ const AddTaskForm = ({ list, onAddTask }) => {
     )
 }
 
-export default AddTaskForm
+export default React.memo(AddTaskForm);

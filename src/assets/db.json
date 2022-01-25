@@ -59,7 +59,7 @@
       "id": 4,
       "listId": 2,
       "text": "Redyx (redux-observable, redux-saga)",
-      "completed": true
+      "completed": false
     },
     {
       "name": "test",

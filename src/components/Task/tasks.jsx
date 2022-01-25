@@ -61,4 +61,4 @@ const Task = ({ id, text,completed, onRemove, list, onEdit, onComplete }) => {
   );
 };
 
-export default Task;
+export default React.memo(Task);

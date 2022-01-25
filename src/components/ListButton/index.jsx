@@ -103,4 +103,4 @@ const ListButton = ({ colors, onAdd }) => {
   );
 };
 
-export default ListButton;
+export default React.memo(ListButton);

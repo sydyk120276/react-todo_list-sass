@@ -42,4 +42,4 @@ const List = ({ items, isRemovable, onClick, onRemove, onClickItem, activeItem }
   );
 };
 
-export default List;
+export default React.memo(List);
